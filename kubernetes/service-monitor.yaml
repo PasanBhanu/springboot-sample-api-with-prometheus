@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: service-monitor
+  labels:
+    release: prometheus-operator
+spec:
+  namespaceSelector:
+    matchNames:
+      - springboot-test
+  selector:
+    matchLabels:
+      monitoring: "true"
+  endpoints:
+    - port: http                    # Port identifier. In your service, exposing port should have same name.
+      path: "/actuator/prometheus"  # Scrape url. This is for Spring Boot.

@@ -1,0 +1,14 @@
+prometheus:
+  replicaCount: 1
+  retention: 2h
+  resourcesPreset: none
+
+alertmanager:
+  enabled: false
+
+blackboxExporter:
+  enabled: false
+
+exporters:
+  node-exporter:
+    enabled: false

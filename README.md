@@ -24,12 +24,12 @@ scrape_configs:
       - targets: ['localhost:8080']
 ```
 
-# For Kubernetes Deployments
+### For Kubernetes Deployments
 ```
 scrape_configs:
   - job_name: 'spring-boot-application'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 15s
     static_configs:
-      - targets: ['springbootapi-service.namespace.svc.cluster.default:8080']
+      - targets: ['springbootapi-service.namespace:8080']
 ```
